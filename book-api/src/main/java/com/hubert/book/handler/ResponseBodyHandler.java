@@ -1,4 +1,4 @@
-package com.hubert.book.api;
+package com.hubert.book.handler;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;

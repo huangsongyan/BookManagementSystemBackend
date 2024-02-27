@@ -31,6 +31,12 @@ public class BookController {
         bookService.addBook(book);
     }
 
+    @RequestMapping(value = "/updateBook", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void updateBook(@RequestBody BookDTO bookDTO) {
+        Book book = Book.valueOf(bookDTO);
+        bookService.updateBook(book);
+    }
+
     @RequestMapping(value = "/removeBook", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public void removeBook(@RequestBody BookDTO bookDTO) {
         bookService.deleteBook(bookDTO.getBookId());

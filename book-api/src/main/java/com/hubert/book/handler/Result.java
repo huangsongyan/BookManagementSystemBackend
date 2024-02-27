@@ -1,4 +1,4 @@
-package com.hubert.book.api;
+package com.hubert.book.handler;
 
 public class Result<T> {
 
