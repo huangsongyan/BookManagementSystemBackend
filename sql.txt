@@ -1,0 +1,10 @@
+create database book_manament_system;
+use `book_manament_system`;
+
+create table book(
+book_id integer primary key,
+book_title varchar(50),
+author varchar(50),
+publication_year year,
+isbn varchar(50)
+);
