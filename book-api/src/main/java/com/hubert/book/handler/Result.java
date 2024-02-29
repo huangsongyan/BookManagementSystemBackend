@@ -2,9 +2,9 @@ package com.hubert.book.handler;
 
 public class Result<T> {
 
-    private Integer code = 200;
+    private Integer code = 0;
 
-    private String message = "ok";
+    private String message = "success";
 
     private T data;
 
