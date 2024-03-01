@@ -26,20 +26,21 @@ public class BookController {
     }
 
     @RequestMapping(value = "/addBook", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
-    public void addBook(@RequestBody BookDTO bookDTO) {
+    public BookDTO addBook(@RequestBody BookDTO bookDTO) {
         Book book = Book.valueOf(bookDTO);
-        bookService.addBook(book);
+        return BookDTO.valueOf(bookService.addBook(book));
     }
 
     @RequestMapping(value = "/updateBook", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public void updateBook(@RequestBody BookDTO bookDTO) {
+    public BookDTO updateBook(@RequestBody BookDTO bookDTO) {
         Book book = Book.valueOf(bookDTO);
-        bookService.updateBook(book);
+        return BookDTO.valueOf(bookService.updateBook(book));
     }
 
     @RequestMapping(value = "/removeBook", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public void removeBook(@RequestBody BookDTO bookDTO) {
+    public int removeBook(@RequestBody BookDTO bookDTO) {
         bookService.deleteBook(bookDTO.getBookId());
+        return 1;
     }
 
 }

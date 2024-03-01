@@ -1,10 +1,12 @@
 package com.hubert.book.entity;
 
 import com.hubert.book.dto.BookDTO;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
 
+@Data
 @Entity
 @Table(name = "book")
 public class Book {
@@ -24,63 +26,6 @@ public class Book {
     String cover;
     @Column(nullable = false)
     String briefInfo;
-
-
-    public long getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(long bookId) {
-        this.bookId = bookId;
-    }
-
-    public String getBookTitle() {
-        return bookTitle;
-    }
-
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public int getPublicationYear() {
-        return publicationYear;
-    }
-
-    public void setPublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public String getCover() {
-        return cover;
-    }
-
-    public void setCover(String cover) {
-        this.cover = cover;
-    }
-
-    public String getBriefInfo() {
-        return briefInfo;
-    }
-
-    public void setBriefInfo(String briefInfo) {
-        this.briefInfo = briefInfo;
-    }
 
     public static Book valueOf(BookDTO bookDTO) {
         Book book = new Book();

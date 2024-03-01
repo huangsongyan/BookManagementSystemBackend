@@ -49,18 +49,19 @@ public class BookServiceTest {
     @Test
     public void updateBook() {
         Book book = new Book();
-        book.setBookId(2);
+        book.setBookId(2L);
+        book.setBookTitle("文章标题修改");
         bookRepository.saveAndFlush(book);
-        List<Book> books = bookRepository.findAll();
-        Assert.assertEquals(5, books.size());
+        Book updateBook = bookRepository.findById(2L).get();
+        Assert.assertEquals("文章标题修改", updateBook.getBookTitle());
     }
 
     @Test
     public void deleteBook() {
         long id = 2;
         bookRepository.deleteById(id);
-        List<Book> books = bookRepository.findAll();
-        Assert.assertEquals(5, books.size());
+        Book deleteBook = bookRepository.findById(2L).get();
+        Assert.assertNull(deleteBook);
     }
 
 

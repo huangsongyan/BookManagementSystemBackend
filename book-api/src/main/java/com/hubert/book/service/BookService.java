@@ -32,12 +32,12 @@ public class BookService {
         return bookDTO;
     }
 
-    public void addBook(Book book) {
-        bookRepository.saveAndFlush(book);
+    public Book addBook(Book book) {
+        return bookRepository.saveAndFlush(book);
     }
 
-    public void updateBook(Book book) {
-        bookRepository.saveAndFlush(book);
+    public Book updateBook(Book book) {
+        return bookRepository.saveAndFlush(book);
     }
 
     public void deleteBook(long id) {
